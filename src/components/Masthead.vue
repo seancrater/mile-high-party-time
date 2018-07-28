@@ -50,7 +50,7 @@
       },
       scrollTo(elementID) {
         const targetElement = document.getElementById(elementID);
-        console.log(targetElement);
+        window.scroll({top: targetElement.offsetTop, left: 0, behavior: 'smooth' });
       }
     },
     mounted() {
@@ -59,9 +59,13 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .masthead {
     background: linear-gradient(rgba(255,255,255,0.75), rgba(194, 32, 47,.95)),url('../assets/images/background.jpg');
     background-size: cover;
+    
+    .container {
+      position: relative;
+    }
   }
 </style>
