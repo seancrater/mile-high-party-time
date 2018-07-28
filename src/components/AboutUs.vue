@@ -1,16 +1,16 @@
 <template>
-
+  <section id="AboutUs">
+    <div class="container">
+    </div>
+  </section>
 </template>
 
 <script>
-export default {
-  name: 'masthead',
-  data () {
+  export default {
+    data () {
+      return {
 
+      }
+    }
   }
-}
 </script>
-
-<style scoped>
-
-</style>

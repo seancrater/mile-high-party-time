@@ -1,5 +1,5 @@
 <template>
-  <section id="ComingSoon">
+  <section id="ContactUs">
   </section>
 </template>
 

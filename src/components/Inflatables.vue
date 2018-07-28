@@ -1,16 +1,14 @@
 <template>
-
+  <section id="Inflatables">
+  </section>
 </template>
 
 <script>
-export default {
-  name: 'masthead',
-  data () {
-
+  export default {
+    data () {
+      return {
+        
+      }
+    }
   }
-}
 </script>
-
-<style scoped>
-
-</style>
