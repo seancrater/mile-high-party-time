@@ -33,6 +33,7 @@
       return {
         activeLink: 'Masthead',
         leadText: 'Rental bouncy castles and more!',
+        menuHeight: 0,
         menuItems: {
           Masthead: 'Home',
           AboutUs: 'About Us',
@@ -51,10 +52,23 @@
       scrollTo(elementID) {
         const targetElement = document.getElementById(elementID);
         window.scroll({top: targetElement.offsetTop, left: 0, behavior: 'smooth' });
+      },
+      setActiveSection() {
+        let sections = [...document.querySelectorAll('.home > section')];
+        const currentScrollY = window.scrollY + this.menuHeight;
+
+        sections = sections.filter(section => {
+          if (section.getBoundingClientRect().top < currentScrollY) {
+            return true;
+          }
+        });
+
+        this.activeLink = sections[sections.length - 1].getAttribute('id');
       }
     },
     mounted() {
-      // TODO: Smooth scrollling script here
+      this.menuHeight = document.querySelector('.navbar').offsetHeight;
+      window.onscroll = this.setActiveSection;
     }
   }
 </script>
