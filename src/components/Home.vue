@@ -19,6 +19,7 @@ export default {
   components: {
     AboutUs,
     ComingSoon,
+    ContactUs,
     Inflatables,
     Masthead
   }

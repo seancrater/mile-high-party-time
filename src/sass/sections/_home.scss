@@ -1,5 +1,18 @@
-.navbar-collapse {
-  @include media-breakpoint-up(md) {
-    justify-content: center;
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.nav {
+  &-link {
+    transition: color .15s ease;
   }
+}
+
+.navbar {
+  &-collapse {
+    @include media-breakpoint-up(md) {
+      justify-content: center;
+    }
+  } 
 }
