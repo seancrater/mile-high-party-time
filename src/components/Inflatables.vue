@@ -1,5 +1,8 @@
 <template>
   <section id="Inflatables">
+    <div class="container py-4">
+      <h2 class="text-center font-weight-light">{{ sectionTitle }}</h2>
+    </div>
   </section>
 </template>
 
@@ -7,7 +10,7 @@
   export default {
     data () {
       return {
-        
+        sectionTitle: 'Inflatables'
       }
     }
   }

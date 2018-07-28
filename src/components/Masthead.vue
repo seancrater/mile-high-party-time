@@ -1,8 +1,14 @@
 <template>
-  <section class="masthead" id="Masthead">
-    <div class="container text-center py-4">
-      <img :alt="title" src="../assets/logo.png">
-      <p class="lead">{{leadText}}</p>
+  <section id="Masthead">
+    <div class="masthead">
+      <div class="container text-center py-4">
+        <h1>
+          <img :alt="title" src="../assets/logo.png">
+          <span class="d-none">Mile High Party Time - Bouncy Castles in the Denver, Colorado Area</span>
+        </h1>
+        
+        <p class="lead">{{leadText}}</p>
+      </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
@@ -55,6 +61,7 @@
 
 <style scoped>
   .masthead {
-    background: linear-gradient(rgba(255,255,255,0.75), rgba(155,155,155,.75)),url('../assets/images/background.jpg');
+    background: linear-gradient(rgba(255,255,255,0.75), rgba(194, 32, 47,.95)),url('../assets/images/background.jpg');
+    background-size: cover;
   }
 </style>
