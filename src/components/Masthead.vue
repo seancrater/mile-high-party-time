@@ -33,6 +33,8 @@
       return {
         activeLink: 'Masthead',
         leadText: 'Rental bouncy castles and more!',
+        mastheadHeight: 0,
+        menuFixed: false,
         menuHeight: 0,
         menuItems: {
           Masthead: 'Home',
@@ -45,9 +47,20 @@
       }
     },
     methods: {
+      handleMenuPosition() {
+        if (window.scrollY > this.mastheadHeight) {
+          this.menuFixed = true;
+        } else {
+          this.menuFixed = false;
+        }
+      },
       route(newRoute) {
         this.activeLink = newRoute;
         this.scrollTo(newRoute);
+      },
+      scrollEvents() {
+        this.handleMenuPosition();
+        this.setActiveSection();
       },
       scrollTo(elementID) {
         const targetElement = document.getElementById(elementID);
@@ -67,8 +80,9 @@
       }
     },
     mounted() {
+      this.mastheadHeight = document.querySelector('#Masthead').offsetHeight;
       this.menuHeight = document.querySelector('.navbar').offsetHeight;
-      window.onscroll = this.setActiveSection;
+      window.onscroll = this.scrollEvents;
     }
   }
 </script>
