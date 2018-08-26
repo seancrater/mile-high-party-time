@@ -1,6 +1,10 @@
 <template>
   <div class="social-icons" :class="modifierClass">
-    <a v-for="(platformUrl, platformName) in socialPlatforms" :key="platformName" :href="platformUrl" target="_blank">
+    <a v-for="(platformUrl, platformName, index) in socialPlatforms"
+       :class="{ 'mr-2': index === 0 }"
+       :key="platformName" :href="platformUrl"
+       rel="noopener noreferrer"
+       target="_blank">
       <img :alt="platformName" :src="platformIcons[platformName]" />
     </a>
   </div>

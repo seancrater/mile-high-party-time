@@ -16,3 +16,17 @@ img {
     }
   } 
 }
+
+.social-icons {
+  img {
+    max-width: $grid-gutter-width*.75;
+  }
+}
+
+.footer {
+  background-color: #F9F9F9;
+
+  &__social {
+    text-align: right;
+  }
+}

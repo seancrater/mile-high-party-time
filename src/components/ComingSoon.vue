@@ -1,6 +1,6 @@
 <template>
   <section id="ComingSoon">
-    <div class="container py-4">
+    <div class="container py-5">
       <h2 class="text-center font-weight-light">{{ sectionTitle }}</h2>
     </div>
   </section>

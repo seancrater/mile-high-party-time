@@ -8,6 +8,7 @@
         </h1>
         
         <p class="lead">{{leadText}}</p>
+        <Social modifier-class="masthead__social" />
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -28,7 +29,12 @@
 </template>
 
 <script>
+  import Social from './Social.vue';
+
   export default {
+    components: {
+      Social
+    },
     data() {
       return {
         activeLink: 'Masthead',
@@ -94,6 +100,13 @@
     
     .container {
       position: relative;
+    }
+
+    &__social {
+      display: inline-block;
+      position: absolute;
+      right: 1rem;
+      top: 1.5rem;
     }
   }
 </style>
