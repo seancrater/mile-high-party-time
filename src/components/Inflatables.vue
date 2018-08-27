@@ -8,9 +8,11 @@
              :key="inflatable.title">
           <div :alt="inflatable.title"
                class="inflatable__image mb-2 mb-md-4"
-               :style="{ backgroundImage: `url('${require('../assets/images/background.jpg')}')` }">
+               :style="{ backgroundImage: `url('${require(`../assets/images/${inflatable.image}`)}')` }">
           </div>
           <h5>{{ inflatable.title }}</h5>
+          <p>{{ inflatable.description }}</p>
+          <p class="mb-0"><i>{{ inflatable.rate }}</i> per hour</p>
         </div>
       </div>
     </div>
@@ -23,11 +25,15 @@
       return {
         inflatables: [
           {
-            image: 'wet-dry-jungle-slide.jpg',
+            description: 'A jungle themed bounce castle with a detachable slide that can function wet or dry, perfect for any season!',
+            image: 'placeholder.png',
+            rate: '$100.00',
             title: 'Wet/Dry Jungle Slide Combo Unit'
           },
           {
-            image: 'jungle-obstacle-course.jpg',
+            description: 'A 30 foot jungle obstacle course with a climbing wall, a slide, and many inflatable obstacles, great for all ages.',
+            image: 'placeholder.png',
+            rate: '$125.00',
             title: 'Jungle Obstacle Course'
           }
         ],
@@ -46,6 +52,7 @@
 
   .inflatable {
     &__image {
+      background-position: center center;
       background-size: cover;
       border: .15rem solid $white;
       border-radius: 10px;

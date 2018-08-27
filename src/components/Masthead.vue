@@ -43,7 +43,6 @@
         menuFixed: false,
         menuHeight: 0,
         menuItems: {
-          Masthead: 'Home',
           AboutUs: 'About Us',
           Inflatables: 'Inflatables',
           ComingSoon: 'Coming Soon',
