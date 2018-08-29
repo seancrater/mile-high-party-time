@@ -1,6 +1,6 @@
 <template>
-  <section id="Masthead">
-    <div class="masthead">
+  <section ref="masthead" id="Masthead">
+    <div class="masthead" :style="{ marginBottom: menuFixed ? `${menuHeight}px` : '0px' }">
       <div class="container text-center py-4">
         <h1>
           <img :alt="title" src="../assets/logo.png">
@@ -11,7 +11,7 @@
         <Social modifier-class="masthead__social" />
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" :class="{ 'navbar--fixed': menuFixed }">
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,7 @@
     },
     methods: {
       handleMenuPosition() {
-        if (window.scrollY > this.mastheadHeight) {
+        if (window.scrollY > (this.mastheadHeight - this.menuHeight)) {
           this.menuFixed = true;
         } else {
           this.menuFixed = false;
@@ -85,7 +85,7 @@
       }
     },
     mounted() {
-      this.mastheadHeight = document.querySelector('#Masthead').offsetHeight;
+      this.mastheadHeight = this.$refs.masthead.offsetHeight;
       this.menuHeight = document.querySelector('.navbar').offsetHeight;
       window.onscroll = this.scrollEvents;
     }
@@ -106,6 +106,16 @@
       position: absolute;
       right: 1rem;
       top: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .navbar--fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 5;
     }
   }
 </style>

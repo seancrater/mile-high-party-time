@@ -4,9 +4,10 @@
       <h2 class="font-weight-light mb-4">{{ sectionTitle }}</h2>
       <p>Interested in scheduling a rental? We'd love to hear from you!</p>
       <div class="contact-us__buttons">
-        <a class="btn btn-info" href="tel:" rel="noopener noreferrer">Call us to schedule</a>
+        <a href="tel:8027354949" rel="noopener noreferrer">Call us at 802-735-4949</a>
         <i class="mx-1">or</i>
-        <a class="btn btn-primary" rel="noopener noreferrer">Email us</a>
+        <a class="btn btn-primary" href="mailto:info@milehighpartytime.com" rel="noopener noreferrer">Email us</a>
+        <span class="ml-1">to schedule</span>
       </div>
     </div>
   </section>
@@ -31,7 +32,8 @@ export default {
     &__buttons {
       color: $white;
 
-      & i {
+      & i,
+      & span {
         color: $blue;
       }
     }
