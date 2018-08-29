@@ -1,5 +1,5 @@
 <template>
-  <section ref="masthead" id="Masthead">
+  <section id="Masthead">
     <div class="masthead" :style="{ marginBottom: menuFixed ? `${menuHeight}px` : '0px' }">
       <div class="container text-center py-4">
         <h1>
@@ -39,7 +39,7 @@
       return {
         activeLink: 'Masthead',
         leadText: 'Rental bouncy castles and more!',
-        mastheadHeight: 0,
+        mastheadHeight: 450,
         menuFixed: false,
         menuHeight: 0,
         menuItems: {
@@ -51,9 +51,12 @@
         title: 'Mile High Party Time'
       }
     },
+    computed: {
+      offsetMenuPosition() { return this.mastheadHeight - this.menuHeight }
+    },
     methods: {
       handleMenuPosition() {
-        if (window.scrollY > (this.mastheadHeight - this.menuHeight)) {
+        if (window.scrollY > this.offsetMenuPosition) {
           this.menuFixed = true;
         } else {
           this.menuFixed = false;
@@ -69,7 +72,7 @@
       },
       scrollTo(elementID) {
         const targetElement = document.getElementById(elementID);
-        window.scroll({top: targetElement.offsetTop, left: 0, behavior: 'smooth' });
+        window.scroll({top: targetElement.offsetTop - this.menuHeight, left: 0, behavior: 'smooth' });
       },
       setActiveSection() {
         let sections = [...document.querySelectorAll('.home > section')];
@@ -85,7 +88,6 @@
       }
     },
     mounted() {
-      this.mastheadHeight = this.$refs.masthead.offsetHeight;
       this.menuHeight = document.querySelector('.navbar').offsetHeight;
       window.onscroll = this.scrollEvents;
     }
